@@ -28,10 +28,12 @@ public class Day02_JUnitAnnotations {
     public static void afterClass(){
         System.out.println("After Class Runs after the entire class ONCE");
     }
+
     @Before
     public void setUp(){
         System.out.println("Before Method Runs before each @Test annotation");
     }
+
     @After
     public void tearDown(){
         System.out.println("After Method Runs after each @Test annotation");

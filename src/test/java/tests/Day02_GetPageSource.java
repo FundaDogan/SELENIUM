@@ -17,9 +17,10 @@ public class Day02_GetPageSource {
         driver.get("https://www.amazon.com/");
 
         //getPageSource() returns page source code as a string
-//We might use this to verify if a certain text exist in the entire page
-//Note that pageSource is not used a lot to do assertions
-//Because it is too general and can lead false result
+
+        //We might use this to verify if a certain text exist in the entire page
+        //Note  getPageSource is not used a lot to do assertions
+        //Because it is too general and can lead false result
 
         /*TEST CASE:
         Test if amazon contains “Registry” on the homepage
@@ -28,7 +29,7 @@ public class Day02_GetPageSource {
         */
 
         String pageSource = driver.getPageSource();
-        //System.out.println(pageSource);
+        System.out.println(pageSource);
 
         String expectedWord = "Registry";
 

@@ -14,7 +14,7 @@ public class Day02_TitleVerification {
 
         //get the title
         String actualTitle = driver.getTitle();
-        String expectedTitle = "“Techpro Education | Online It Courses & Bootcamps";
+        String expectedTitle = "Techpro Education | Online It Courses & Bootcamps";
 
         // Verify if page title is "Techpro Education | Online It Courses & Bootcamps
 

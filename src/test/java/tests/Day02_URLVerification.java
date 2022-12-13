@@ -34,7 +34,7 @@ public class Day02_URLVerification {
     2) I then create my test case
     3) Then I do "Manual Testing" FIRST helps us to understand THE APPLICATION
     4) If all above good, I start complete my automation script
-    4) If I find any bug/defect, then I talk to dev. Dev fixes the issue, then I reset.If all is good then start my AUTOMATION
+    4) If I find any bug/defect, then I talk to dev. Dev fixes the issue, then I retest.If all is good then start my AUTOMATION
     5) when Automation is complete, I prepare the report for the user story. In fact, My Automation script generate html
     reports for us, I upload those reports to the JIRA.
     for my MANUAL test cases, I manually take screenshots and prepare reports and attach them to the JIRA.

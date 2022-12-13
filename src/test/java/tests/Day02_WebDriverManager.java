@@ -12,10 +12,14 @@ public class Day02_WebDriverManager {
 
         WebDriverManager.chromedriver().setup();
 
+        //REST IS THE SAME
+        //Create driver
         WebDriver driver = new ChromeDriver();
 
+        //maximize
         driver.manage().window().maximize();
 
+        // go to the page
         driver.get("https://www.techproeducation.com");
 
         driver.quit();

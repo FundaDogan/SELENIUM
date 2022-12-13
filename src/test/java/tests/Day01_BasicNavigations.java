@@ -33,7 +33,7 @@ public class Day01_BasicNavigations {
         driver.navigate().refresh();
 
 //        Close/Quit the browser
-        driver.quit();
+       driver.quit();
 
     }
 }
