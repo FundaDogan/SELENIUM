@@ -82,15 +82,20 @@ public class Day03_Locators {
         button.click();
 
         //Verifying the log in is successful
+
 //        1. We can use default page URL to do assertion
-//        2. Or we can locate a CORE ELEMENT on the default page to assert is that element is displayed on the page
+
+//        2. Or we can locate a CORE ELEMENT on the default page to assert is that element is displayed
+//        on the page
+
 //        Login Page : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
 //        Default Page : https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index
 
 
         String actualURL = driver.getCurrentUrl();
         String expectedURL = "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";
-        Assert.assertEquals("LOGIN FAILED",expectedURL,actualURL);//If login successful PASS, if not FAIL and print message LOGIN FAILED"
+        Assert.assertEquals("LOGIN FAILED",expectedURL,actualURL);  //If login successful PASS,
+        // if not FAIL and print message LOGIN FAILED"
 
 
 

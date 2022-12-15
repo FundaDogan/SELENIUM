@@ -24,6 +24,9 @@ public class Day04_LinkTexts {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().window().maximize();
     }
+     /*
+    linktext and partialLinkText are case sensitive
+     */
 
     @Test
     public void LMSPage(){
@@ -53,11 +56,13 @@ public class Day04_LinkTexts {
         driver.get("https://techproeducation.com/");
         driver.findElement(By.partialLinkText("LMS")).click();
 
-        //Alternatively we can locate core element on lms page and check if that elements is displayed on that page
+        //Alternatively we can locate core element on lms page and check if that elements is displayed on
+        // that page
 
         WebElement loginElement = driver.findElement(By.linkText("Login/Register"));
 
-        Assert.assertTrue(loginElement.isDisplayed());//isDisplayed() returns TRUE is element is on the page. returns false if element is not displayed on the page
+        Assert.assertTrue(loginElement.isDisplayed());
+        //isDisplayed() returns TRUE is element is on the page. returns false if element is not displayed on the page
 
         //Assert.assertTrue(driver.findElement(By.linkText("Login/Register")).isDisplayed());
     }
