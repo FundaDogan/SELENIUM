@@ -32,27 +32,42 @@ public class Day05_dynamic_xpath {
 
         //        THERE ARE DIFFERENT XPATH TO LOCATE A TEXT ELEMENT ON A PAGE
 
-//        1. XPATH = //*[.='TEXT OF THE ELEMENT']
-//        Verify if "Username : Admin" is text is displayed on the page
-//        //[.='Username : Admin'] return the element whose text = Username : Admin
+
+            //        1. XPATH = //*[.='TEXT OF THE ELEMENT']
+
+//        Verify if "Username : Admin" text is displayed on the page
+
+        //[.='Username : Admin'] return the element whose text = Username : Admin
 
         WebElement userNameText = driver.findElement(By.xpath("//*[.='Username : Admin']"));
         Assert.assertTrue(userNameText.isDisplayed());
+
 
 //        Verify if "Password : admin123" text is displayed on the page
         WebElement passwordText = driver.findElement(By.xpath("//*[.='Password : admin123']"));
         Assert.assertTrue(passwordText.isDisplayed());
 
-//        Verify if "Username : Admin" is text is displayed on the page
-//        2. XPATH = //[(text()='TEXT OF THE ELEMENT')]
+
+
+        //        2. XPATH = //[(text()='TEXT OF THE ELEMENT')]
+
+        //  Verify if "Username : Admin" is text is displayed on the page
 
         WebElement userNameText1 = driver.findElement(By.xpath("//*[(text()='Username : Admin')]"));
         Assert.assertTrue(userNameText1.isDisplayed());
 
+
+
 //        Verify if "Password" text is displayed on the page
+
+        WebElement passwordText1 = driver.findElement(By.xpath("//*[(text()='Password : admin123')]"));
+        Assert.assertTrue(passwordText1.isDisplayed());
+
+
+
 //        3. XPATH = //*[contains(text(),'PARTIAL OR FULL TEXT OF THE ELEMENT');
 
-        WebElement passwordText1 = driver.findElement(By.xpath("//*[contains(text(),'Passw')]"));
+        WebElement passwordText2 = driver.findElement(By.xpath("//*[contains(text(),'Passw')]"));
         Assert.assertTrue(passwordText1.isDisplayed());
 
     }
