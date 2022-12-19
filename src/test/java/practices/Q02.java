@@ -1,4 +1,4 @@
-package practices.practice01;
+package practices;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
