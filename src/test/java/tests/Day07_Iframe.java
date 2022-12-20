@@ -24,7 +24,8 @@ public class Day07_Iframe extends TestBase {
         Assert.assertTrue(header.contains("Editor"));
 
 
-        //note : textbox is in the iframe so we need to switch
+        // Locate the text box
+        //note : text box is in the iframe, so we need to switch
 
         driver.switchTo().frame(0); // INDEX OF IFRAME. INDEX STARTS AT 0
         driver.switchTo().frame("mce_0_ifr"); // ID OR NAME OF IFRAME. PREFERRED ONE.
@@ -59,19 +60,26 @@ public class Day07_Iframe extends TestBase {
 
 /*
     What might be the reason for your test case to fail?
-    There may be wait problem. The page may be very slow. Internet maybe not fast enough.
+
+    1-There may be wait problem. The page may be very slow. Internet maybe not fast enough.
     Put some more wait. We can use explicit wait in selenium(we will learn later)
-    Locator might be incorrect.
+
+    2- Locator might be incorrect.
     Double check locator and fix if needed
-    Data issue. Typo in our expected values.
+
+    3- Data issue. Typo in our expected values.
     If there is any documentation issue, we can talk to BA to fix the document and then we can use correct expected values
-    Maybe there is an iframe on the page
+
+    4- Maybe there is an iframe on the page
     We first need to switch to the frame
-    Maybe there is an alert on the page
+
+    5- Maybe there is an alert on the page
     We first need to handle the alert by accepting or dismissing
-    Maybe the page opens in a new tab or window
+
+    6- Maybe the page opens in a new tab or window
     We first need to switch the target window
-    It may be a real bug that is caused by the latest codes.
+
+   7- It may be a real bug that is caused by the latest codes.
     We discuss the issue with the team then raise a bug ticket if needed
 
  */
