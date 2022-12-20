@@ -7,9 +7,10 @@ import utilities.TestBase;
 
 public class Day07_Alerts extends TestBase {
 
+    //        acceptAlert() => click on the first alert,
     @Test
     public void acceptAlert() throws InterruptedException {
-//        acceptAlert() => click on the first alert,
+
         driver.get("https://testcenter.techproeducation.com/index.php?page=javascript-alerts");
         driver.findElement(By.xpath("//button[@onclick='jsAlert()']")).click();
 

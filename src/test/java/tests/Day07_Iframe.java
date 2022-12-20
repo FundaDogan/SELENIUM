@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utilities.TestBase;
 
-public class IFrame extends TestBase {
+public class Day07_Iframe extends TestBase {
 
     @Test
     public void iframeTest(){
@@ -18,30 +18,35 @@ public class IFrame extends TestBase {
 
 //        Verify the Bolded text contains “Editor”
 
-        //header is not in the iframe so do not to switch to iframe
+        //Bolded text - header is not in the iframe so do not to switch to iframe
 
         String header = driver.findElement(By.xpath("//h3")).getText();
         Assert.assertTrue(header.contains("Editor"));
 
-//        Locate the text box
 
         //note : textbox is in the iframe so we need to switch
+
         driver.switchTo().frame(0); // INDEX OF IFRAME. INDEX STARTS AT 0
         driver.switchTo().frame("mce_0_ifr"); // ID OR NAME OF IFRAME. PREFERRED ONE.
         driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='mce_0_ifr']")));// WEBELEMENT OF IFRAME
 
+
+        // Locate the text box
         WebElement box = driver.findElement(By.xpath("//p"));
 
 
-//        Delete the text in the text box
+        // Delete the text in the text box
         box.clear(); // clear() is used to delete the text
 
-//        Type “This text box is inside the iframe”
+
+        //        Type “This text box is inside the iframe”
 
        box.sendKeys("This text box is inside the iframe");
 
 
-        //        SO FAR DRIVER IS IN THE IFRAME BUT Elemental Selenium text IS OUTSIDE OF THE FRAME
+        // SO FAR DRIVER IS IN THE IFRAME BUT Elemental Selenium text IS OUTSIDE OF THE FRAME
+
+
 //        GETTING OUT OF THE FRAME
 
         driver.switchTo().parentFrame();
