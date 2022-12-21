@@ -44,7 +44,7 @@ public class Day07_WindowHandle1 extends TestBase {
 
         for (String w : allWindowHandles){  //looping through the windows
 
-            if (!w.equals(window1Handle)){  //if we are not in windows 1 (means windows 2)
+            if (!w.equals(window1Handle)){  //if HANDLE is not windows 1 handle(means windows 2)
                 driver.switchTo().window(w);//then switch the window 2
             }
         }
