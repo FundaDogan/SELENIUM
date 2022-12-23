@@ -8,7 +8,7 @@ import utilities.TestBase;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class FileDownloadTest extends TestBase {
+public class Day09_FileDownloadTest extends TestBase {
 //    downloadTest()
 
     @Test
@@ -21,11 +21,11 @@ public class FileDownloadTest extends TestBase {
 //    Download b10 all test cases
         driver.findElement(By.linkText("b10 all test cases")).click(); //downloading the file
 
-        Thread.sleep(2000);//after click, it takes a few millisecond, so use hard wait
+        Thread.sleep(5000);//after click, it takes a few millisecond to download, so use hard wait
 
 //    Then verify if the file downloaded successfully
         String homeDirectory = System.getProperty("user.home");
-        String filePath = homeDirectory + "/Downloads/b10 all test cases, code.docx";
+        String filePath = homeDirectory + "\\Downloads\\b10 all test cases, code.docx";
 
         Boolean isDownloaded = Files.exists(Paths.get(filePath));
         Assert.assertTrue(isDownloaded);
