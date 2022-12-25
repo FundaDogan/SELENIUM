@@ -90,7 +90,7 @@ public class Day04_Xpath_Css {
      * --Relative xpath use //
      * --Relative xpath is very reliable It doesn't easy brake, because absolute xpath doesn't dependent on
      *  other element
-     * --I use absolute xpath in my framework when to locate the elements
+     * --I use relative xpath in my framework when to locate the elements
      *
      *
      * What is the difference between xpath and css selector?
