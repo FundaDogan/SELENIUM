@@ -2,6 +2,7 @@ package homework;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import utilities.TestBase;
@@ -16,9 +17,10 @@ public class AmazonSearch extends TestBase {
     @Test
     public void test1(){
         driver.get("https://amazon.ca");
-        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("porcelain teapot");
+        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("porcelain teapot" + Keys.ENTER);
 
-        driver.findElement(By.id("nav-search-submit-button")).click();
+        //driver.findElement(By.id("nav-search-submit-button")).click();
+
         WebElement number = driver.findElement(By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small']"));
         System.out.println(number.getText());
     }

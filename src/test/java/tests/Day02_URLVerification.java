@@ -30,14 +30,15 @@ public class Day02_URLVerification {
         /*
         ===========Approach for Automation========
 
-    1) I read the acceptance criteria very very carefully
-    2) I then create my test case
-    3) Then I do "Manual Testing" FIRST helps us to understand THE APPLICATION
-    4) If all above good, I start complete my automation script
-    4) If I find any bug/defect, then I talk to dev. Dev fixes the issue, then I retest.If all is good then start my AUTOMATION
-    5) when Automation is complete, I prepare the report for the user story. In fact, My Automation script generate html
-    reports for us, I upload those reports to the JIRA.
-    for my MANUAL test cases, I manually take screenshots and prepare reports and attach them to the JIRA.
+        -I read the acceptance criteria carefully.
+        -I then create my test cases
+        -Then I do my manual testing FIRST
+         -If all good, then I start complete my automation script
+         -If I find a bug/defect, then I talk to dev. Dev fixes the issue, then I retest.
+         If all is good then complete my automation script
+        -When teh automation is complete, I prepare the report for teh user story. In fact, My automation script
+        generates html reports for us. I upload those reports to the JIRA.
+        -For my manual test cases, I manually take screenshots and prepare reports and attach them to the JIRA.
 -------------------------------------------------
     WHAT DO WE DO WHEN OUR TEST CASE PASS ?
     - Prepare report and upload to JIRA
