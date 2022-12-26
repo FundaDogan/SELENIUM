@@ -48,5 +48,13 @@ public class Day10_FileUpload extends TestBase {
     Path of the file should be dynamic - use System.getProperty("user.home");
      */
 
+/*
+    LIMITATION:
+    Selenium has limitation automation DESKTOP APPS
+    For example, we can not find path of files, or verify if file exists on out machines with selenum
+    Instead we use java File libraries
+
+ */
+
 }
 
