@@ -19,7 +19,7 @@ public class Day09_FileDownloadTest extends TestBase {
 
 
 //    Download b10 all test cases
-        driver.findElement(By.linkText("b10 all test cases")).click(); //downloading the file
+        driver.findElement(By.linkText("b10 all test cases, code.docx")).click(); //downloading the file
 
         Thread.sleep(5000);//after click, it takes a few millisecond to download, so use hard wait
 

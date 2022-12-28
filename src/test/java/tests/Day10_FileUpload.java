@@ -30,14 +30,14 @@ public class Day10_FileUpload extends TestBase {
 
 //        we can use send keys cause the input type file combination
 
-        chooseAFileButton.sendKeys(pathOfFile);
+        //chooseAFileButton.sendKeys(pathOfFile);
 
 //        3. then locate and click upload
-        driver.findElement(By.id("file-submit")).click();
+       // driver.findElement(By.id("file-submit")).click();
 
 //        4. Asserting
-        boolean isEqual = driver.findElement(By.xpath("//h3")).getText().equals("File Uploaded!");
-        Assert.assertTrue(isEqual);
+       // boolean isEqual = driver.findElement(By.xpath("//h3")).getText().equals("File Uploaded!");
+        //Assert.assertTrue(isEqual);
     }
 
     /*
