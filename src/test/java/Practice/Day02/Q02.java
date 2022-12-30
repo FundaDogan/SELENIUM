@@ -72,5 +72,5 @@ public class Q02 extends TestBase {
 
         WebElement text = driver.findElement(By.id("code"));
         Assert.assertTrue(text.isDisplayed());
-    }
+   }
 }
