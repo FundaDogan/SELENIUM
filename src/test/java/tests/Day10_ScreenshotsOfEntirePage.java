@@ -19,9 +19,7 @@ public class Day10_ScreenshotsOfEntirePage extends TestBase {
 //      TAKE A SCREENSHOT. CREATE A REUSABLE METHOD AND CALL THAT METHOD
         takeScreenshotOfPage();
 
-//       COMPLETE AS HOMEWORK
-//        And select United Kingdom
-//        searchAndSelectFromList("uni","United Kingdom");
+
 //        When user type “uni” in the search box
 
         driver.findElement(By.id("myCountry")).sendKeys("uni");
@@ -30,10 +28,10 @@ public class Day10_ScreenshotsOfEntirePage extends TestBase {
 
         driver.findElement(By.xpath("//div[@id='myCountryautocomplete-list']//div[.='United Kingdom']")).click();
 
-        //        TAKE SCREENSHOT
+        // TAKE SCREENSHOT
         takeScreenshotOfPage();
 
-//        Add click on submit button
+
         //    And click on submit button
 
         driver.findElement(By.xpath("//input[@type='button']")).click();
@@ -41,7 +39,7 @@ public class Day10_ScreenshotsOfEntirePage extends TestBase {
 //        TAKE SCREENSHOT
         takeScreenshotOfPage();
 
-//        Then verify the result contains united Kingdom
+
         //    Then verify the result contains ‘United Kingdom’
         Assert.assertTrue(driver.findElement(By.id("result")).getText().contains("United Kingdom"));
 

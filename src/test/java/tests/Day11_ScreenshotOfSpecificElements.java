@@ -12,6 +12,7 @@ public class Day11_ScreenshotOfSpecificElements extends TestBase {
     @Test
     public void screenshotTest() throws IOException {
 
+        //When user goes to "techproeducation.com"
         driver.get("https://www.techproeducation.com");
 
         WebElement techProEdLogo = driver.findElement(By.xpath("//div[@data-id='898ce2e']"));

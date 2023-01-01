@@ -63,51 +63,52 @@ public abstract class TestBase {
         Assert.assertTrue(result.contains(textFromList));
 
     }
-/*
+
     //    TAKE SCREENSHOT OF ENTIRE PAGE WITH THIS REUSABLE METHOD
 
     public void takeScreenshotOfPage() throws IOException {
 
 //        1. Take screenshot using getScreenshotAs method and TakeScreenshot API-coming from selenium
 
-        File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        File image = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
 //        2. Save the screenshot in a path and Save with dynamic name
 //        2. Creating a PATH and dynamic name for the image
         //getting the current local date and time
-        String currentTime = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());//Where we save the image
+        String currentTime = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 
         // path is where we save the screenshot. PROJECT/FOLDER    /FOLDER     /NAME OF IMAGE  .png
-        String path = System.getProperty("user.dir")+"/test-output/Screenshots/"+currentTime+".png";
-        FileUtils.copyFile(image,new File(path));
-
- */
-
-        //    TAKE SCREENSHOT OF ENTIRE PAGE WITH THIS REUSABLE METHOD
-        public void takeScreenshotOfPage() throws IOException {
-//        1. Take screenshot using getScreenshotAs method and TakeScreenshot API-coming from selenium
-            File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-//        2. Creating a PATH and dynamic name for the image
-            String currentTime = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());//getting the current local date and time
-//        path is where we save the screenshot. PROJECT/FOLDER    /FOLDER     /NAME OF IMAGE  .png
-            String path = System.getProperty("user.dir")+"/test-output/Screenshots/"+currentTime+"image.png";//Where we save the image
-
-//        3. Saving the IMAGE in the PATH
-            FileUtils.copyFile(image,new File(path));
-        }
+        String path = System.getProperty("user.dir") + "/test-output/Screenshots/" + currentTime + ".png";//Where we save the image
 
 
-    //    TAKE SCREENSHOT OF SPECIFIC ELEMENT
-
-    public void takeScreenshotOfTheElement(WebElement element) throws IOException {
-//        1. take screenshot
-        File image = element.getScreenshotAs(OutputType.FILE);
-//        2. Creating a PATH and dynamic name for the image
-        String currentTime = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());//getting the current local date and time
-//        path is where we save the screenshot. PROJECT/FOLDER    /FOLDER     /NAME OF IMAGE  .png
-        String path = System.getProperty("user.dir") + "/test-output/Screenshots/" + currentTime + "image.png";//Where we save the image
-//        3. Saving the IMAGE in the PATH
+        //3. Saving the IMAGE in the PATH
         FileUtils.copyFile(image, new File(path));
 
     }
+
+
+
+        //    TAKE SCREENSHOT OF SPECIFIC ELEMENT
+
+    public void takeScreenshotOfTheElement(WebElement element) throws IOException {
+
+//        1. take screenshot
+
+        File image = element.getScreenshotAs(OutputType.FILE);
+
+//        2. Creating a PATH and dynamic name for the image
+
+        String currentTime = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());//getting the current local date and time
+
+//        path is where we save the screenshot. PROJECT/FOLDER    /FOLDER     /NAME OF IMAGE  .png
+
+        String path = System.getProperty("user.dir") + "/test-output/Screenshots/" + currentTime + "image.png";//Where we save the image
+
+//        3. Saving the IMAGE in the PATH
+
+        FileUtils.copyFile(image, new File(path));
+
+    }
+
+
 }
