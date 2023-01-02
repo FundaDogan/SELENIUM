@@ -25,7 +25,7 @@ public class Day11_ReadExcel {
         FileInputStream fileInputStream = new FileInputStream(path);
 
 //        Open the workbook using fileinputstream
-        Workbook workbook = WorkbookFactory.create(fileInputStream);
+        Workbook workbook = WorkbookFactory.create(fileInputStream);//excel dosyasinin kopyasini workbook a koyduk.
 
 //        Open the first worksheet
         Sheet sheet1 = workbook.getSheet("Sheet1");

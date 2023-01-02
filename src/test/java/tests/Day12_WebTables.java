@@ -50,4 +50,40 @@ public class Day12_WebTables extends TestBase {
         System.out.println("Last Row Data : "+allRows.get(allRows.size()-1).getText());
 
     }
+
+    @Test
+    public void printColumns(){
+
+        driver.get("https://the-internet.herokuapp.com/tables");
+
+        //        Task 4 : Print column 5 data in the table body
+
+        List<WebElement> col5Data = driver.findElements(By.xpath("//table[@id='table1']//tr//td[5]"));
+        int colNum =1;
+        for (WebElement eachData : col5Data){
+            System.out.println("Row "+colNum+" Column 5 => "+eachData.getText());
+            colNum++;
+        }
+
+    }
+
+    //        HOMEWORK
+//        Task 5 : Write a method that accepts 2 parameters
+//        Parameter 1 = row number
+//        Parameter 2 = column number
+//        printData(2,3);  => prints data in 2nd row 3rd column
+
+    public void printData(int rowNum, int colNum){
+
+        String xpath = "//table[@id='table1']//tr["+rowNum+"]//td["+colNum+"]";
+
+
+    }
+
+    @Test
+    public void printDataTest(){
+
+        printData(2,3);//fbach@yahoo.com
+        printData(4,1);//Conway
+    }
 }
