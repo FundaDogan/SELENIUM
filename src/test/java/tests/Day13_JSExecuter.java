@@ -91,5 +91,9 @@ public class Day13_JSExecuter extends TestBase {
     public void colorByJSTest(){
         driver.get("https://www.priceline.com/");
         changeBackgroundColorByJS(driver.findElement(By.xpath("//button[@data-testid='HOTELS_SUBMIT_BUTTON']")),"red");
+
+        addBorderWithJS(driver.findElement(By.xpath("//button[@data-testid='HOTELS_SUBMIT_BUTTON']")),"5px solid green");
     }
+
+    // for more methods visit JSExecuter in selenium
 }

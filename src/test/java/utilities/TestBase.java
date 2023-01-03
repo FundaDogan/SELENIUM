@@ -235,8 +235,10 @@ public abstract class TestBase {
 
 
 
-    //    Changes the changeBackgroundColorByJS of an element. Params: WebElement element, String color.
-    //    NOT COMMON
+    //    Changes the changeBackgroundColorByJS of an element.
+    //    Params: WebElement element, String color.
+    //    NOT COMMON ,  it is used to change background color.sometimes we may need to highlight an element
+    //  for this we may need it.
 
     public void changeBackgroundColorByJS(WebElement element, String color){
 
