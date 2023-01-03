@@ -39,6 +39,7 @@ public class Day11_ReadExcel {
         Cell cell1 = row1.getCell(0);//index starts at 0. reading the first cell data that is on the first row
         System.out.println(cell1);
 
+        System.out.println("-------");
 //        We can convert the cell data to string
         String cell1Data = cell1.toString();
         System.out.println(cell1Data);
@@ -58,9 +59,12 @@ public class Day11_ReadExcel {
 //        Find the number of row
         int numberOfRow = sheet1.getLastRowNum()+1;//index starts at 0, so add 1 to find total number of row
         System.out.println("ROW COUNT : "+numberOfRow);
+
 //        Find the number of used row
         int numberOfData = sheet1.getPhysicalNumberOfRows();//index starts at 1. Returns the number of row that has a DATA
         System.out.println("Number of Data : "+numberOfData);
+
+
 //        Print country, capitol key value pairs as map object
 //        {{USA,D.C},{ France,Paris },...}
 //        Create a Map that will store the country, capital pairs

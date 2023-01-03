@@ -111,4 +111,145 @@ public abstract class TestBase {
     }
 
 
+/*   HARD WAIT:
+     @param : second
+ */
+
+    public static void waitFor(int seconds ){
+
+        try {
+            Thread.sleep(seconds*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /*
+        JAVASCRIPT EXECUTOR
+        @param WebElement
+        Accepts a web element and scrolls into that element
+        We may need to scroll for capturing the screenshots property
+        We may need to scroll to specific elements with js executor
+        because some elements may not LOAD properly
+        unless we scroll to that elements
+    */
+
+    public void scrollIntoViewJS(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].scrollIntoView(true);",element);
+    }
+
+
+    /*
+   scroll the page all the way down
+    */
+    public void scrollAllDownByJS(){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+    }
+
+
+    /*
+    scroll the page all the way up
+     */
+    public void scrollAllUpByJS(){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
+    }
+
+
+    /*
+        click on an element
+        @param WebElement
+        Normally we use element.click() method in selenium
+        When there is an issue with click()-hidden, different UI, ...
+        Then we can use javascript click that works better
+         */
+
+    public void clickByJS(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click()",element);
+    }
+
+
+
+    /*
+        @param : WebElement, String
+        Types the string in the WebElement
+
+        element.sendKeys("text") to type in an input
+        ALTERNATIVELY we can use use js executor to type in an input
+        arguments[0].setAttribute('value','admin123');  -> SAME AS element.sendKeys("admin123")
+
+        INTERVIEW QUESTION : What are the selenium methods that you use to type in an input?
+        - sendKeys()
+        - with javascript executor we can change the value of the input
+         */
+
+    public void setValueByJS(WebElement element, String text){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].setAttribute('value','"+text+"')",element);
+    }
+
+
+
+    /*
+    param : id of the element
+     */
+
+    public void getValueByJS(String idOfElement){
+
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        String value=js.executeScript("return document.getElementById('"+idOfElement+"').value").toString();
+        System.out.println(value);
+
+         /*
+        if it is a normal text I use getText() with selenium. But if the text is an input value,such as default
+        values in a box- caretta website check-in check out values, I cannot use it.
+        to get these kind of values, which seems text, we use JSexecuter.
+
+        Day13 Js executer class ta metodu cagirdik ve run edince tarihleri getirdi. git bak
+        bunun html kodum]nda value attribute u var onun degerini getiriyor.
+
+        html kodundaki text ile value='ayse' farkli seyler, value attribute degeri de ayse.
+
+        Bu metodta getElementById() kullaniliyor, eger webelement te id yoksa bu metodu kullanamam.
+
+        jsexecuter da xpath kullanark ta elemani getirebilirdi ama komplike gerek yok dedi.
+
+         */
+
+//        How you get the value of an input box?
+//        We can use js executor.
+//        How?
+//        I can get the element using js executor, and get the value of the element.
+//        For example, I can get the element by id, and use value attribute to get the value of in an input
+//        I have to do this, cause getText in this case does not return teh text in an input
+
+        //We are able to get the default value of the Check-in Check-out box
+//      This is one of the limitations of the selenium because normally, we cannot get the value of an
+//      attribute  with selenium
+
+    }
+
+
+
+    //    Changes the changeBackgroundColorByJS of an element. Params: WebElement element, String color.
+    //    NOT COMMON
+
+    public void changeBackgroundColorByJS(WebElement element, String color){
+
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].style.backgroundColor='"+color+"'",element);
+    }
+
+
+    //    NOT COMMON
+    public void addBorderWithJS(WebElement element, String borderStyle){
+
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].style.border='"+borderStyle+"'",element);
+    }
+
 }
