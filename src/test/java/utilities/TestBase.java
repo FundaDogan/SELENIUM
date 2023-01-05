@@ -39,6 +39,9 @@ public abstract class TestBase {
 //    }
 
 
+
+
+
 //       AUTO COMPLETE REUSABLE METHOD
 
 //    THIS CODE IS USED FOR SELECTING AND VERIFYING OUR APP AUTO COMPLETE SEARCH FUNCTIONALITY
@@ -68,6 +71,9 @@ public abstract class TestBase {
         Assert.assertTrue(result.contains(textFromList));
 
     }
+
+
+
 
     //    TAKE SCREENSHOT OF ENTIRE PAGE WITH THIS REUSABLE METHOD
 
