@@ -23,21 +23,25 @@ public class Day14_ExplicitWait extends TestBase {
 
 //        Then verify the ‘Hello World!’ Shows up on the screen
 
-//        THIS PIECE OF CODE FAILS CAUSE IMPLICIT WAIT IS NOT ABLE TO HANDLE THE WAIT TIME
-//        SOLUTION: TRY EXPLICIT WAIT OR FLUENT WAIT
-
 //        WebElement helloElement = driver.findElement(By.xpath("//div[@id='finish']//h4"));
 //        Assert.assertEquals("Hello World!",helloElement.getText());
+
+        // THIS PIECE OF CODE FAILS CAUSE IMPLICIT WAIT IS NOT ABLE TO HANDLE THE WAIT TIME
+//        SOLUTION: TRY EXPLICIT WAIT OR FLUENT WAIT
+
 
 //        1. Create webdriver wait object
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 //        2. Use wait object to handle syncronization issue(wait issue)
-//        *waits for teh xpath to be visible UP TP 10 SECONDS
-//        *returns the WEB ELEMENT
-//        *If the element is not found within 10 seconds, the throw time out exception
 
-        WebElement helloElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='finish']//h4")));
+//        *waits for the xpath to be visible UP to 10 SECONDS
+//        *returns the WEB ELEMENT
+//        *If the element is not found within 10 seconds, then throw time out exception
+
+        WebElement helloElement = wait.until(ExpectedConditions.
+                visibilityOfElementLocated(By.xpath("//div[@id='finish']//h4")));
+
         Assert.assertEquals("Hello World!",helloElement.getText());
     }
 
@@ -45,8 +49,11 @@ public class Day14_ExplicitWait extends TestBase {
     public void explicitWaitReusable(){
 
         driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
+
         driver.findElement(By.xpath("//div[@id='start']//button")).click();
+
         WebElement helloElement = waitForClickablility(By.xpath("//div[@id='finish']//h4"),10);
+
         Assert.assertEquals("Hello World!",helloElement.getText());
 
     }

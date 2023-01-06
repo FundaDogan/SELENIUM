@@ -268,24 +268,29 @@ public abstract class TestBase {
 
 
 
-    //    DYNAMIC SELENIUM WAITS:
-//===============Explicit Wait==============//
+                                //    DYNAMIC SELENIUM WAITS:
+                        //===============Explicit Wait==============//
+
     public static WebElement waitForVisibility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
+
     public static WebElement waitForVisibility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+
     public static WebElement waitForClickablility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+
     public static WebElement waitForClickablility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
+
     public static void clickWithTimeOut(WebElement element, int timeout) {
         for (int i = 0; i < timeout; i++) {
             try {
@@ -296,6 +301,7 @@ public abstract class TestBase {
             }
         }
     }
+
     public static void waitForPageToLoad(long timeout) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
@@ -313,8 +319,8 @@ public abstract class TestBase {
     }
 
 
-    //======Fluent Wait====
-    // params : xpath of teh element , max timeout in seconds, polling in second
+                                     //======Fluent Wait====
+             // params : xpath of teh element , max timeout in seconds, polling in second
 
     public static WebElement fluentWait(String xpath, int withTimeout, int pollingEvery) {
 
