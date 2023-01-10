@@ -5,9 +5,12 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.devtools.v85.webaudio.WebAudio;
+import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
 
 public class Day10_FileUpload extends TestBase {
+
+    String str;
 
     @Test
     public void fileUploadTest() throws InterruptedException {
@@ -20,6 +23,9 @@ public class Day10_FileUpload extends TestBase {
         WebElement chooseAFileButton = driver.findElement(By.id("file-upload"));
 
         Thread.sleep(2000);
+
+
+
 
 //        2. select a file from your computer
 
